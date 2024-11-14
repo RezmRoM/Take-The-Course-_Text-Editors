@@ -1,0 +1,67 @@
+/* Контейнер для инструментов с адаптивной разметкой */
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  width: 100%;
+}
+
+/* Отдельный элемент инструмента */
+.tool-item {
+  flex: 0 0 auto;
+}
+
+/* Минимальная ширина для выпадающего списка шрифтов */
+.font-select {
+  min-width: 200px;
+}
+
+/* Стилизация кнопки выбора цвета */
+.color-btn {
+  min-width: 140px !important;
+  height: 40px !important;
+  padding: 0 !important;
+}
+
+/* Группа кнопок форматирования текста */
+.formatting-buttons {
+  display: flex;
+  gap: 4px;
+  margin-right: 8px;
+}
+
+/* Основной контейнер панели инструментов редактора */
+.editor-toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Унификация высоты кнопок и селектов в панели инструментов */
+.editor-toolbar .v-btn,
+.editor-toolbar .v-select {
+  height: 40px !important;
+}
+
+/* Настройка высоты полей select-компонентов */
+.editor-toolbar .v-select .v-field {
+  height: 40px !important;
+  min-height: 40px !important;
+}
+
+/* Настройка внутренних отступов для input в select-компонентах */
+.editor-toolbar .v-select .v-field__input {
+  min-height: 40px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Выравнивание выбранного значения в select-компоненте */
+.editor-toolbar .v-select .v-field__input > .v-select__selection {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}

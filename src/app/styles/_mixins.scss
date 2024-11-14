@@ -1,0 +1,79 @@
+// Миксины для адаптивности
+@mixin mobile {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 600px) and (max-width: 959px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+// Миксин для сенсорных устройств
+@mixin touch-device {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
+// Поддержка экранов с высоким разрешением (Retina)
+@mixin high-dpi {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+// Миксины для ориентации устройства
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+// Миксины для доступности
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin high-contrast {
+  @media (prefers-contrast: more) {
+    @content;
+  }
+}
+
+// Поддержка темной темы
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+// Стили для печати
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+// Минимальный размер области касания для сенсорных устройств
+@mixin touch-target {
+  min-width: var(--touch-target-size);
+  min-height: var(--touch-target-size);
+  padding: var(--touch-target-spacing);
+}

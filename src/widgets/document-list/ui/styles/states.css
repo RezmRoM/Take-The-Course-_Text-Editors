@@ -1,0 +1,35 @@
+/* Эффект при наведении на элемент документа */
+.document-item:hover {
+  transform: translateX(4px) scale(1);
+  border-color: rgba(var(--v-theme-primary), 0.1);
+  background-color: rgba(var(--v-theme-primary), 0.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Стили для активного элемента списка */
+.v-list-item--active {
+  background-color: rgba(var(--v-theme-primary), 0.05) !important;
+  border-left: 3px solid rgb(var(--v-theme-primary)) !important;
+  margin-left: 0 !important;
+}
+
+/* Отключение стандартного фона активного элемента Vuetify */
+.v-list-item--active::before {
+  opacity: 0 !important;
+}
+
+/* Начальное состояние кнопок в элементе документа */
+.document-item .v-btn {
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+/* Отображение кнопок при наведении на элемент документа */
+.document-item:hover .v-btn {
+  opacity: 1;
+}
+
+/* Эффект при наведении на кнопки */
+.document-item .v-btn:hover {
+  transform: scale(1.1);
+} 

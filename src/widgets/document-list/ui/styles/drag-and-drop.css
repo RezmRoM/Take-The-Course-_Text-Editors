@@ -1,0 +1,82 @@
+/* Стили для области захвата при перетаскивании */
+.drag-handle {
+  cursor: grab;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+}
+
+/* Стиль при активном перетаскивании */
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Сетка точек для визуального отображения области захвата */
+.dots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  width: 12px;
+  height: 18px;
+}
+
+/* Стили для отдельной точки в сетке */
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(var(--v-theme-primary), 0.5);
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+/* Изменение цвета точек при наведении */
+.drag-handle:hover .dot {
+  background-color: rgba(var(--v-theme-primary), 0.8);
+}
+
+/* Стили для перетаскиваемого элемента */
+.document-item.dragging {
+  opacity: 0.7;
+  background-color: rgba(var(--v-theme-primary), 0.05);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Стили для области, над которой находится перетаскиваемый элемент */
+.document-item.drag-over {
+  transform: translateY(4px);
+  border: 2px dashed rgba(var(--v-theme-primary), 0.5);
+  background-color: rgba(var(--v-theme-primary), 0.05);
+}
+
+/* Анимация для неперетаскиваемых элементов во время drag-and-drop */
+.is-dragging .document-item:not(.dragging) {
+  transition: transform 0.2s ease;
+}
+
+/* Отображение области захвата только на десктопах */
+@media (hover: hover) {
+  .drag-handle {
+    display: flex;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+
+  .document-item:hover .drag-handle {
+    opacity: 1;
+  }
+}
+
+/* Скрытие области захвата на мобильных устройствах */
+@media (hover: none) and (pointer: coarse) {
+  .drag-handle {
+    display: none;
+  }
+}

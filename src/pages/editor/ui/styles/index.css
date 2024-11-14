@@ -1,0 +1,23 @@
+/* Отключение максимальной ширины контейнера */
+:deep(.container) {
+  max-width: none !important;
+}
+  
+/* Настройка основной области редактора */
+.editor-main {
+    overflow-y: auto;
+  height: calc(100vh - 64px); /* Вычитаем высоту toolbar */
+}
+  
+/* Настройка контейнера редактора */
+.editor-container {
+    height: auto;
+    min-height: 100%;
+  }
+  
+  /* Адаптация под мобильные устройства */
+  @media (max-width: 600px) {
+  .editor-main {
+    height: calc(100vh - 56px); /* Для мобильных устройств toolbar меньше */
+  }
+}

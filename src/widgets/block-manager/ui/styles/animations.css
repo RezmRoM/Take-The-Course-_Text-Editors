@@ -1,0 +1,24 @@
+/* Анимация перемещения элементов при изменении порядка */
+.v-slide-y-transition-move {
+  transition: transform 0.3s ease;
+}
+
+/* Общие стили для анимации появления и исчезновения */
+.v-slide-y-transition-enter-active,
+.v-slide-y-transition-leave-active {
+  transition: all 0.3s ease;
+  position: absolute;
+  width: 100%;
+}
+
+/* Начальное и конечное состояние для анимации появления/исчезновения */
+.v-slide-y-transition-enter-from,
+.v-slide-y-transition-leave-to {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+/* Позиционирование элемента при анимации исчезновения */
+.v-slide-y-transition-leave-active {
+  position: absolute;
+} 

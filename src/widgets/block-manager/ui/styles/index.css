@@ -1,0 +1,36 @@
+@import './base.css';
+@import './states.css';
+@import './responsive.css';
+@import './animations.css';
+
+/* Поддержка темной темы */
+@media (prefers-color-scheme: dark) {
+  .add-block-card {
+    /* Настройка градиента для темной темы */
+    background: linear-gradient(
+      to right,
+      rgba(var(--v-theme-primary), 0.2),
+      rgba(var(--v-theme-primary), 0.1)
+    );
+    /* Цвет рамки для темной темы */
+    border-color: rgba(var(--v-theme-primary), 0.5);
+  }
+}
+
+/* Отключение анимаций для пользователей с ограниченным движением */
+@media (prefers-reduced-motion: reduce) {
+  .block-card,
+  .add-block-card,
+  .v-slide-y-transition-enter-active,
+  .v-slide-y-transition-leave-active {
+    transition: none !important;
+  }
+}
+
+/* Стили для печати */
+@media print {
+  /* Скрытие кнопки добавления блока при печати */
+  .add-block-card {
+    display: none !important;
+  }
+} 

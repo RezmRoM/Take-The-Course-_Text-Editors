@@ -1,0 +1,18 @@
+/* Базовые стили для карточки блока */
+.block-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Стили для карточки добавления нового блока */
+.add-block-card {
+  /* Градиентный фон с использованием основного цвета темы */
+  background: linear-gradient(
+    to right,
+    rgba(var(--v-theme-primary), 0.1),
+    rgba(var(--v-theme-primary), 0.05)
+  );
+  /* Пунктирная граница с использованием основного цвета темы */
+  border: 2px dashed rgba(var(--v-theme-primary), 0.4);
+  transition: all 0.3s ease;
+} 

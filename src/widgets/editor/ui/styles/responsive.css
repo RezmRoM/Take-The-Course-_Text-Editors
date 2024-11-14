@@ -1,0 +1,63 @@
+/* Вертикальное расположение инструментов в мобильной версии */
+.tools-container.mobile {
+  flex-direction: column;
+}
+
+/* Растягивание элементов инструментов на всю ширину в мобильной версии */
+.tools-container.mobile .tool-item {
+  width: 100%;
+}
+
+/* Растягивание селектора шрифтов на всю ширину в мобильной версии */
+.tools-container.mobile .font-select {
+  min-width: 100%;
+}
+
+/* Растягивание кнопки выбора цвета на всю ширину в мобильной версии */
+.tools-container.mobile .color-btn {
+  width: 100%;
+}
+
+/* Распределение кнопок выравнивания и форматирования на всю ширину в мобильной версии */
+.tools-container.mobile .align-buttons,
+.tools-container.mobile .formatting-buttons {
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Адаптация для мобильных экранов */
+@media (max-width: 600px) {
+  /* Скрытие элементов на мобильных устройствах */
+  .hide-on-mobile {
+    display: none;
+  }
+
+  /* Уменьшение отступов контейнера инструментов */
+  .tools-container {
+    padding: 4px;
+  }
+
+  /* Добавление отступа между инструментами */
+  .tool-item {
+    margin-bottom: 4px;
+  }
+
+  /* Уменьшение высоты кнопок */
+  .v-btn {
+    height: 36px !important;
+  }
+}
+
+/* Адаптация для сенсорных устройств */
+@media (hover: none) and (pointer: coarse) {
+  /* Увеличение размера кнопок для удобства нажатия */
+  .v-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Увеличение расстояния между инструментами */
+  .tools-container {
+    gap: 12px;
+  }
+} 

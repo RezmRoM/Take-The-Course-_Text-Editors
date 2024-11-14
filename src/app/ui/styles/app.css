@@ -1,0 +1,61 @@
+/* Базовая высота viewport */
+:root {
+  --vh: 1vh;
+}
+
+/* Базовые стили */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Оптимизация для сенсорных устройств */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    touch-action: manipulation;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  .v-btn {
+    min-height: var(--touch-target-size);
+  }
+}
+
+/* Улучшение доступности - отключение анимаций */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Поддержка режима высокой контрастности */
+@media (prefers-contrast: more) {
+  * {
+    border-width: var(--border-width, 2px) !important;
+  }
+}
+
+/* Стили для печати - скрытие ненужных элементов */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

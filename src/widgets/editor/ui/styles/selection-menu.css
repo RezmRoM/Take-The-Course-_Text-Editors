@@ -1,0 +1,40 @@
+/* Панель инструментов для выделенного текста */
+.selection-toolbar {
+  position: fixed;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: white;
+  border-radius: 4px;
+  /* Тень для визуального выделения панели */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Плавная анимация появления/исчезновения */
+  transition: all 0.15s ease;
+  padding: 2px;
+}
+
+/* Контейнер для кнопок форматирования */
+.selection-buttons {
+  background: white;
+  /* Тонкая рамка для визуального разделения */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  /* Обрезание содержимого по границам */
+  overflow: hidden;
+  display: flex;
+  gap: 1px;
+}
+
+/* Настройка размеров кнопок Vuetify */
+.selection-buttons .v-btn {
+  margin: 0;
+  /* Отключение скругления углов у кнопок */
+  border-radius: 0;
+  height: 28px;
+  width: 28px;
+  min-width: 28px !important;
+}
+
+/* Уменьшение размера иконок в кнопках */
+.selection-buttons .v-icon {
+  font-size: 16px;
+} 

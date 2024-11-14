@@ -1,0 +1,12 @@
+/* Стилизация состояния пустого списка документов */
+.empty-state {
+  /* Центрирование содержимого по вертикали и горизонтали */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Внутренний отступ */
+  padding: 2rem;
+  /* Цвет текста с прозрачностью */
+  color: rgba(0, 0, 0, 0.6);
+} 

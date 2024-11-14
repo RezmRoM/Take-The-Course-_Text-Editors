@@ -1,0 +1,54 @@
+/* Карточка выбора цвета */
+.color-picker-card {
+  border-radius: 8px;
+}
+
+/* Сетка цветов с горизонтальной прокруткой */
+.color-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  padding: 8px;
+}
+
+/* Кнопка цвета в сетке */
+.color-btn-grid {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+}
+
+/* Эффект наведения на кнопку цвета */
+.color-btn-grid:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Стили выбранного цвета */
+.color-selected {
+  transform: scale(1.15);
+  border-color: rgba(var(--v-theme-primary), 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Тень для иконки цвета */
+.color-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Базовые стили кнопки цвета */
+.color-btn {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+/* Эффект наведения на базовую кнопку цвета */
+.color-btn:hover {
+  border-color: rgba(var(--v-theme-primary), 0.5);
+  transform: scale(1.05);
+} 

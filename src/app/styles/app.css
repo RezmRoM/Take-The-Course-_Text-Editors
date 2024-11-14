@@ -1,0 +1,59 @@
+/* Импорт адаптивных стилей */
+@import './responsive.css';
+
+/* Использование CSS переменных для высоты viewport */
+:root {
+  --vh: 1vh;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#app {
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+}
+
+/* Улучшение сенсорного взаимодействия */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    touch-action: manipulation;
+  }
+
+  input, button, select, textarea {
+    font-size: 16px !important;
+  }
+
+  .v-btn {
+    min-height: var(--touch-target-size);
+  }
+}
+
+/* Улучшение доступности - отключение анимации */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Поддержка режима высокой контрастности */
+@media (prefers-contrast: more) {
+  * {
+    border-width: var(--border-width, 2px) !important;
+  }
+}
+
+/* Стили для печати */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+} 

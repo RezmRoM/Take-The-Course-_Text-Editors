@@ -1,0 +1,38 @@
+/* Обертка редактора - контейнер для всех компонентов редактора */
+.editor-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Основной контейнер редактора с белым фоном */
+.editor-container {
+  background-color: white;
+}
+
+/* Панель инструментов редактора с разделительной линией снизу */
+.editor-toolbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: stretch;
+}
+
+/* Область содержимого редактора с минимальной высотой и границами */
+.editor-content {
+  min-height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: none;
+}
+
+/* Основные стили для области редактирования ProseMirror */
+:deep(.ProseMirror) {
+  min-height: 200px;
+  padding: 20px;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Подсветка активной области редактирования при фокусе */
+:deep(.ProseMirror:focus) {
+  background-color: rgba(var(--v-theme-primary), 0.04);
+} 

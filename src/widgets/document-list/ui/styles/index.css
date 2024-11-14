@@ -1,0 +1,93 @@
+/* Импорт стилей из отдельных файлов */
+@import './base.css';
+@import './states.css';
+@import './drag-and-drop.css';
+@import './animations.css';
+@import './empty-state.css';
+
+/* Стили для мобильных устройств */
+.document-list.mobile {
+  max-height: 90vh;
+}
+
+/* Уменьшенные отступы для очень маленьких экранов */
+.document-list.xs .document-item {
+  padding: 8px 12px;
+}
+
+/* Ограничение ширины контента на мобильных устройствах */
+.mobile-content {
+  max-width: 200px;
+}
+
+/* Стили для сенсорных устройств */
+@media (hover: none) {
+  /* Включение вертикальной прокрутки */
+  .document-item {
+    touch-action: pan-y;
+  }
+
+  /* Скрытие элемента для перетаскивания */
+  .drag-handle {
+    display: none;
+  }
+
+  /* Постоянное отображение кнопок */
+  .document-item .v-btn {
+    opacity: 1;
+  }
+}
+
+/* Стили для планшетов */
+@media (min-width: 600px) and (max-width: 959px) {
+  .document-content {
+    max-width: 250px;
+  }
+}
+
+/* Стили для десктопов */
+@media (min-width: 960px) {
+  .document-content {
+    max-width: 300px;
+  }
+}
+
+/* Стили для экранов с высоким разрешением */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .document-item {
+    border-width: 0.5px;
+  }
+}
+
+/* Поддержка темного режима */
+@media (prefers-color-scheme: dark) {
+  .document-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Отключение анимаций при настройке уменьшения движения */
+@media (prefers-reduced-motion: reduce) {
+  .document-item,
+  .v-slide-y-transition-enter-active,
+  .v-slide-y-transition-leave-active,
+  .v-expand-transition-enter-active,
+  .v-expand-transition-leave-active {
+    transition: none !important;
+  }
+}
+
+/* Стили для печати */
+@media print {
+  /* Отключение теней при печати */
+  .document-list {
+    box-shadow: none !important;
+  }
+
+  /* Предотвращение разрыва элементов при печати */
+  .document-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+} 

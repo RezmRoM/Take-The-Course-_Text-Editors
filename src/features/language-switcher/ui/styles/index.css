@@ -1,0 +1,48 @@
+.language-btn {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+.language-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.locale-flag {
+  font-size: 1.2em;
+}
+
+.locale-name {
+  font-size: 0.95em;
+}
+
+.language-menu {
+  overflow: hidden;
+}
+
+.locale-item {
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.locale-item:hover {
+  background-color: rgba(var(--v-theme-primary), 0.1);
+}
+
+.selected-locale {
+  background-color: rgba(var(--v-theme-primary), 0.05);
+}
+
+.locale-title {
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.v-icon {
+  transition: all 0.2s ease;
+}
+
+.locale-item:hover .v-icon {
+  transform: scale(1.2);
+  }

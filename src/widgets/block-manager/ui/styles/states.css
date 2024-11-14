@@ -1,0 +1,16 @@
+/* Стили при наведении на карточку добавления блока */
+.add-block-card:hover {
+  /* Усиление градиента при наведении */
+  background: linear-gradient(
+    to right,
+    rgba(var(--v-theme-primary), 0.15),
+    rgba(var(--v-theme-primary), 0.1)
+  );
+  /* Усиление цвета границы при наведении */
+  border-color: rgba(var(--v-theme-primary), 0.6);
+}
+
+/* Добавление тени при наведении на карточку блока */
+.block-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} 

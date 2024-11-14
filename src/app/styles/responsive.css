@@ -1,0 +1,89 @@
+:root {
+  /* Базовые единицы отступов */
+  --space-unit: 4px;
+  --space-xs: calc(var(--space-unit) * 1);  /* 4px */
+  --space-sm: calc(var(--space-unit) * 2);  /* 8px */
+  --space-md: calc(var(--space-unit) * 4);  /* 16px */
+  --space-lg: calc(var(--space-unit) * 6);  /* 24px */
+  --space-xl: calc(var(--space-unit) * 8);  /* 32px */
+
+  /* Контрольные точки для адаптивности */
+  --breakpoint-xs: 0px;
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 960px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1920px;
+
+  /* Размеры области касания для сенсорных устройств */
+  --touch-target-size: 44px;
+  --touch-target-spacing: 8px;
+
+  /* Длительность анимаций */
+  --animation-duration-fast: 150ms;
+  --animation-duration-base: 300ms;
+  --animation-duration-slow: 500ms;
+}
+
+/* Адаптивная типография */
+:root {
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+}
+
+/* Настройки для мобильных устройств */
+@media (max-width: 600px) {
+  :root {
+    --font-size-base: 14px;
+    --space-unit: 2px;
+  }
+}
+
+/* Режим повышенной контрастности */
+@media (prefers-contrast: more) {
+  :root {
+    --border-width: 2px;
+    --outline-width: 3px;
+  }
+}
+
+/* Отключение анимаций для пользователей с ограниченными возможностями */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Оптимизация для сенсорных устройств */
+@media (hover: none) and (pointer: coarse) {
+  :root {
+    --touch-target-size: 48px;
+    --touch-target-spacing: 12px;
+  }
+
+  * {
+    cursor: default !important;
+  }
+
+  input, button, select, textarea {
+    font-size: 16px !important; /* Предотвращение масштабирования на iOS */
+  }
+}
+
+/* Настройки для темного режима */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shadow-strength: 0.2;
+    --surface-shadow: 0 2px 8px rgba(0, 0, 0, var(--shadow-strength));
+  }
+}
+
+/* Стили для печати */
+@media print {
+  :root {
+    --font-size-base: 12pt;
+    --space-unit: 0.25cm;
+  }
+} 

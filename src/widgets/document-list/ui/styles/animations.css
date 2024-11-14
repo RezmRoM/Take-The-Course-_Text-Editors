@@ -1,0 +1,44 @@
+/* Анимация перемещения элементов списка */
+.v-slide-y-transition-move {
+  transition: transform 0.3s ease;
+}
+
+/* Настройка анимации появления и исчезновения элементов */
+.v-slide-y-transition-enter-active,
+.v-slide-y-transition-leave-active {
+  transition: all 0.3s ease;
+  position: absolute;
+  width: 100%;
+}
+
+/* Начальное и конечное состояние анимации элементов */
+.v-slide-y-transition-enter-from,
+.v-slide-y-transition-leave-to {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+/* Позиционирование при исчезновении элемента */
+.v-slide-y-transition-leave-active {
+  position: absolute;
+}
+
+/* Настройка контейнера списка с плавным изменением высоты */
+.list-container {
+  transition: height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Анимация разворачивания/сворачивания элементов */
+.v-expand-transition-enter-active,
+.v-expand-transition-leave-active {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Начальное и конечное состояние анимации разворачивания */
+.v-expand-transition-enter-from,
+.v-expand-transition-leave-to {
+  height: 0 !important;
+  opacity: 0;
+} 
